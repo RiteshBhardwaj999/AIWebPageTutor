@@ -1,0 +1,36 @@
+# Render Blueprint - deploy with "New > Blueprint" on render.com
+services:
+  - type: web
+    name: ai-webpage-tutor
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: ai-tutor-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: ai-tutor-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: ai-tutor-db
+          property: password
+      - key: JWT_SECRET
+        generateValue: true
+      - key: AI_API_KEY
+        sync: false  # You'll set this manually
+      - key: AI_API_BASE_URL
+        value: https://api.groq.com/openai/v1
+      - key: AI_API_MODEL
+        value: llama-3.3-70b-versatile
+
+databases:
+  - name: ai-tutor-db
+    plan: free
+    databaseName: aiwebpagetutor
+    user: tutor

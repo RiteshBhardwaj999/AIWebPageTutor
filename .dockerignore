@@ -1,0 +1,9 @@
+target/
+data/
+chrome-extension/
+.idea/
+.git/
+*.iml
+*.md
+docker-compose.yml
+render.yaml

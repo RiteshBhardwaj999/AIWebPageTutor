@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Webpage Tutor</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="panel-header">
+    <h1>AI Webpage Tutor</h1>
+  </div>
+
+  <div id="welcome" class="section">
+    <p class="welcome-text">Select text on any webpage and choose an action from the toolbar to get started.</p>
+  </div>
+
+  <div id="loading" class="section hidden">
+    <div class="loader"></div>
+    <p class="loading-action" id="loading-action">Processing...</p>
+    <p class="loading-text" id="loading-text"></p>
+  </div>
+
+  <div id="error" class="section hidden">
+    <div class="error-box">
+      <p id="error-text"></p>
+    </div>
+  </div>
+
+  <div id="result" class="section hidden">
+    <div class="result-header">
+      <span class="action-badge" id="action-badge"></span>
+    </div>
+    <div class="source-text" id="source-text"></div>
+    <div class="ai-result" id="ai-result"></div>
+  </div>
+
+  <div id="history-panel" class="section hidden">
+    <h2>Recent Results</h2>
+    <div id="history-list"></div>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>

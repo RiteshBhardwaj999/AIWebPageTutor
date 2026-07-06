@@ -1,0 +1,54 @@
+/* AI Webpage Tutor - Floating Toolbar */
+#ai-tutor-toolbar {
+  position: absolute;
+  z-index: 2147483647;
+  display: none;
+  background: #1a1a2e;
+  border: 1px solid #2d2d44;
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  animation: ai-tutor-fade-in 0.15s ease;
+}
+
+@keyframes ai-tutor-fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#ai-tutor-toolbar .ai-tutor-row {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  max-width: 340px;
+}
+
+#ai-tutor-toolbar button {
+  background: #2d2d44;
+  color: #e0e0e0;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+#ai-tutor-toolbar button:hover {
+  background: #6c5ce7;
+  color: white;
+  transform: translateY(-1px);
+}
+
+#ai-tutor-toolbar button .ai-tutor-icon {
+  margin-right: 4px;
+}
+
+/* Loading state */
+#ai-tutor-toolbar button.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
