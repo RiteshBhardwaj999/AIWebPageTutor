@@ -17,8 +17,6 @@ release.properties
 
 ### Spring Boot ###
 *.log
-application-*.properties
-!application.properties
 data/
 
 ### Eclipse ###

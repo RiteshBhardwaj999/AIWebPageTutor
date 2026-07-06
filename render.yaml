@@ -8,14 +8,30 @@ services:
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
-      - key: DATABASE_URL
+      - key: DB_HOST
         fromDatabase:
           name: ai-tutor-db
-          property: connectionString
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: ai-tutor-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: ai-tutor-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: ai-tutor-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: ai-tutor-db
+          property: password
       - key: JWT_SECRET
         generateValue: true
       - key: AI_API_KEY
-        sync: false  # You'll set this manually
+        sync: false
       - key: AI_API_BASE_URL
         value: https://api.groq.com/openai/v1
       - key: AI_API_MODEL
